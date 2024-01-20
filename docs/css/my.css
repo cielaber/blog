@@ -1,0 +1,116 @@
+/* Here is your custom css styles. */
+
+/* hexo-filter-github-emojis */
+.github-emoji{
+    height: 2em;
+    width: 2em;
+    display: inline-block !important;
+    position: relative;
+    margin: 0 3px !important;
+    padding: 0;
+}
+.github-emoji:hover{
+    animation: emoji-face 5s infinite ease-in-out;
+}
+@keyframes emoji-face {
+    2% {
+        transform: translate(0, 1.5px) rotate(1.5deg);
+    }
+    4% {
+        transform: translate(0, -1.5px) rotate(-0.5deg);
+    }
+    6% {
+        transform: translate(0, 1.5px) rotate(-1.5deg);
+    }
+    8% {
+        transform: translate(0, -1.5px) rotate(-1.5deg);
+    }
+    10% {
+        transform: translate(0, 2.5px) rotate(1.5deg);
+    }
+    12% {
+        transform: translate(0, -0.5px) rotate(1.5deg);
+    }
+    14% {
+        transform: translate(0, -1.5px) rotate(1.5deg);
+    }
+    16% {
+        transform: translate(0, -0.5px) rotate(-1.5deg);
+    }
+    18% {
+        transform: translate(0, 0.5px) rotate(-1.5deg);
+    }
+    20% {
+        transform: translate(0, -1.5px) rotate(2.5deg);
+    }
+    22% {
+        transform: translate(0, 0.5px) rotate(-1.5deg);
+    }
+    24% {
+        transform: translate(0, 1.5px) rotate(1.5deg);
+    }
+    26% {
+        transform: translate(0, 0.5px) rotate(0.5deg);
+    }
+    28% {
+        transform: translate(0, 0.5px) rotate(1.5deg);
+    }
+}
+
+
+/* 自定义字体 */
+@font-face{
+    font-family: 'hl';
+    src: url('../box/font/华文行楷.TTF');
+}
+
+/** 表示全局使用，如果不想全局使用不要添加该段 */
+/* body{
+    font-family: 'hl';
+    font-weight: bold;
+} */
+
+/* 可以局部使用，建议添加 */
+.bg-cover .description,.bg-cover .title{
+    font-family: 'hl';
+}
+
+.github-corner svg{
+    color: black !important;
+}
+
+.recommend .post-card .read-more{
+    background: #383639 !important;
+    box-shadow: none !important;
+}
+
+#toc-content .is-active-link,#toc-content .toc-link:hover{
+    color:#1098F7 !important;
+}
+
+#gongan,#icp{
+    display:inline-block;
+    width:250px;
+    margin:0 auto; 
+    padding:0 5px;
+    color:#fff;
+}
+#gongan a,#icp a{
+    display:inline-block;
+    text-decoration:none;
+    height:20px;
+    line-height:20px;
+}
+#gongan #gonganImg{
+    float:left;
+    width: 17px;
+    height: 17px;
+    position: relative;
+    top: 3px;
+}
+#icp #icpImg{
+    width: 17px;
+    height: 17px;
+    position: relative;
+    top: 3px;
+}

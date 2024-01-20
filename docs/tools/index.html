@@ -1,0 +1,3710 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="聚宝盒, 前端,HTML,CSS,JavaScript,Vue,React,Node,ES6,MySQL">
+    <meta name="description" content="以风为马，百念成诗！">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>聚宝盒 | 百念成诗</title>
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+    <!-- 强制修改看板娘位置 -->
+    <style>
+        #waifu{
+            left: auto !important;
+            right: 140px !important;
+            z-index: 999 !important;
+        }
+    </style>
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="百念成诗" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
+
+
+
+
+ 
+    <style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },2500); 
+        },1000);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+</script>
+ 
+<body>
+    
+        <div id="loading-container">
+             <p class="loading-text">嘘~  加载慢，正在从阿水的辣鸡服务器里偷取页面 . . . </p> 
+             <div class="loading-image">
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div> 
+                 <div></div>
+             </div>
+        </div>
+    
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <!-- <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/image/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">百念成诗</span>
+                </a>
+            </div> -->
+            <!-- 懒加载插件优化 点击首页 logo 不是跳转到首页，而是查看 logo 图片，解决办法如下 -->
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    <div>
+                        
+                        <img src="/image/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+                        
+                        <span class="logo-span" style="display: none;">百念成诗</span>
+                    </div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light" target="_blank">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light" target="_blank">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light" target="_blank">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light" target="_blank">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light" target="_blank">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light" target="_blank">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light" target="_blank">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="http://treasure.eternitywith.xyz" class="waves-effect waves-light" target="_blank">
+      
+      <i class="fas fa-toolbox" style="zoom: 0.6;"></i>
+      
+      <span>藏宝阁</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="http://mywords.eternitywith.xyz" class="waves-effect waves-light" target="_blank">
+      
+      <i class="fas fa-user-secret" style="zoom: 0.6;"></i>
+      
+      <span>WORDS</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="http://album.eternitywith.xyz" class="waves-effect waves-light" target="_blank">
+      
+      <i class="fas fa-image" style="zoom: 0.6;"></i>
+      
+      <span>拾光</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color" style="text-align:center;">
+        
+        <img src="/image/loading.gif" data-original="/medias/avatar.jpg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name" style="display: none;">百念成诗</div>
+        <div class="logo-desc">
+            
+            以风为马，百念成诗！
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a target="_blank" rel="noopener" href="http://treasure.eternitywith.xyz" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-toolbox"></i>
+			
+			藏宝阁
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a target="_blank" rel="noopener" href="http://mywords.eternitywith.xyz" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-secret"></i>
+			
+			WORDS
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a target="_blank" rel="noopener" href="http://album.eternitywith.xyz" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-image"></i>
+			
+			拾光
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/eternitywith" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #e04721;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/eternitywith" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                百念成诗
+                
+            </div>
+
+            <div class="description center-align">
+                
+                <span id="subtitle"></span>
+                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: ['邀一夜星河，去你梦里做客。','我心慕你，如鹿饮水，鸟归林。','站在记忆中的窗边，在第一页，在最早的时刻，在所有诗句之前。','错过了落日余晖，也要记得有满天星辰！','梦里佳期，只许庭花与月知。','总会相逢，就像山川河流，就像万河归海。','醉后不知天在水，满船清梦压星河。','窗外星子昏黄，我看见了你眼里酿酒的月亮。','凌晨四点醒了，发现海棠花未眠。','他日云水身，相望处、无南北。','为了明天能有曙光，爱与恨都要被隐藏。','踏遍山河，人间值得。','除却君身三重雪，天下谁人陪白衣。','风铃响，故人归，我在等风起，也在等你回！','今天的天空像一封深蓝色的情书。','满载一船秋色，平铺十里湖光。','林深时见鹿，溪午不闻钟。','等一场秋风再起，花开如绎。'],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
+</script>
+<!-- <script>
+    $('.bg-cover').css('background-image', 'url(/medias/featureimages/1.jpg)');
+</script> -->
+
+
+    </div>
+</div>
+<style>
+    .friends-container {
+        margin-top: -100px;
+        margin-bottom: 30px;
+    }
+
+    .friends-container .tag-title {
+        margin-bottom: 10px;
+        color: #3C4858;
+        font-size: 1.75rem;
+        font-weight: 400;
+    }
+
+    .frind-ship img {
+        border-radius: 10%;
+    }
+
+    /* 一下是按钮样式 */
+
+    .frind-ship {
+        padding: 0 20px 10px 20px;
+    }
+
+    .frind-ship .title {
+        display: flex;
+        align-items: center;
+    }
+
+    .frind-ship .title div {
+        color: #3C4858;
+        padding-left: 10px;
+        height: 125px;
+    }
+
+    .frind-ship .title img {
+        width: 90px;
+        height: auto;
+        flex-shrink: 0;
+    }
+
+    .frind-ship .title h1 {
+        padding-bottom: 5px;
+        border-bottom: 2px solid #fff;
+        position: relative;
+        top:-15px;
+        left: 3px;
+        margin: 35px 0 22px -5px;
+    }
+
+    .friend-button {
+        display: flex;
+        justify-content: center;
+        margin-bottom: -27px;
+    }
+
+    .friend-button a {
+        border-radius: 40px;
+    }
+
+    .friend-all .tag-post {
+        margin-bottom: 30px;
+    }
+
+    .button-caution {
+        background-color: #33363b;
+        /* border-color: #FF4351; */
+        color: #FFF;
+    }
+
+    .button {
+        font-weight: 300;
+        font-size: 16px;
+        font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        text-decoration: none;
+        text-align: center;
+        line-height: 40px;
+        height: 40px;
+        padding: 0 40px;
+        margin: 0;
+        display: inline-block;
+        appearance: none;
+        cursor: pointer;
+        border: none;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition-property: all;
+        transition-property: all;
+        -webkit-transition-duration: .3s;
+        transition-duration: .3s;
+    }
+
+    .title {
+        margin-bottom: 0rem !important;
+    }
+
+    .card {
+        margin: 3rem 0 1rem 0 !important;
+    }
+
+    .button-glow.button-caution {
+        -webkit-animation-name: glowing-caution;
+        animation-name: glowing-caution;
+    }
+
+    /* 修改标题字体大小 */
+    .friend-name{
+        font-size: 1.5rem !important;
+    }
+
+    .card .card-content p{
+        /* 单行溢出隐藏 */
+        /* white-space: nowrap;
+        text-overflow:ellipsis; */
+
+        display: -webkit-box;
+        /* autoprefixer: off */
+        -webkit-box-orient: vertical;
+        /* autoprefixer: on */
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+
+    @-webkit-keyframes glowing-caution {
+        from {
+            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+        }
+
+        50% {
+            -webkit-box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
+            box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
+        }
+
+        to {
+            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+        }
+    }
+
+    @keyframes glowing-caution {
+        from {
+            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+        }
+
+        50% {
+            -webkit-box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
+            box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
+        }
+
+        to {
+            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+        }
+    }
+
+    .button-caution:hover {
+        /* background-color: #ff7680; */
+        /* border-color: #ff7680; */
+        color: #FFF;
+        text-decoration: none;
+    }
+
+    /* .frind-card1 {
+        background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    }
+
+    .frind-card2 {
+        background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .frind-card3 {
+        background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+    }
+
+    .frind-card4 {
+        background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    }
+
+    .frind-card5 {
+        background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
+    }
+
+    .frind-card6 {
+        background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
+    }
+
+    .frind-card7 {
+        background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+    }
+
+    .frind-card8 {
+        background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
+    }
+
+    .frind-card9 {
+        background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
+    }
+
+    .frind-card10 {
+        background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+    } */
+
+    /* NaN */
+
+    article .card {
+        overflow: visible !important;
+    }
+
+    .card .frind-card{
+        background-color: #cccccc;
+    }
+
+</style>
+
+<main class="content">
+    <div class="container friends-container">
+        
+        
+        
+        
+        <div class="card">
+            <div class="card-content">
+                <div class="tag-title center-align">
+                    <i class="fas fa-toolbox"></i>&nbsp;&nbsp;
+                    学习网站
+                </div>
+                <article id="friends-link">
+                    
+                    <div class="row tags-posts friend-all">
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://developer.mozilla.org/static/img/hero-dino.6c51deebd4af.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">MDN</h1>
+                                            <p style="position: relative;top: -35px;">源于开发者，服务开发者。</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://developer.mozilla.org/zh-CN/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.3.4/source/box/images/logo/github.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">GitHub中文社区</h1>
+                                            <p style="position: relative;top: -35px;">GitHub上优质开源项目的中文社区平台。</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.githubs.cn/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.3.4/source/box/images/logo/oschina.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">开源中国社区</h1>
+                                            <p style="position: relative;top: -35px;">国内最大的开源技术社区</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.oschina.net/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.3.4/source/box/images/logo/w3school.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">W3School文档</h1>
+                                            <p style="position: relative;top: -35px;">领先的Web技术教程</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.w3school.com.cn/index.html" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://7n.w3cschool.cn/statics/img/logo/indexlogo@2x.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">W3Cschool</h1>
+                                            <p style="position: relative;top: -35px;">编程狮，随时随地学编程！</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.w3cschool.cn/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://www.runoob.com/wp-content/themes/runoob/assets/img/runoob-logo.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">菜鸟教程</h1>
+                                            <p style="position: relative;top: -35px;">学的不仅是技术，更是梦想！</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.runoob.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://static.leetcode-cn.com/cn-mono-assets/production/main/assets/logo-dark-cn.c42314a8.svg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">力扣</h1>
+                                            <p style="position: relative;top: -35px;">编程/算法/面试刷题网站</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://leetcode-cn.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.3.4/source/box/images/logo/nowcoder.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">牛客网</h1>
+                                            <p style="position: relative;top: -35px;">面试题刷题网站</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.nowcoder.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://learn.freecodecamp.one/img/freeCodeCamp-logo.svg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">freeCodeCamp</h1>
+                                            <p style="position: relative;top: -35px;">IT刷题通关</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://learn.freecodecamp.one/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.3.4/source/box/images/logo/51cto.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">51CTO题库</h1>
+                                            <p style="position: relative;top: -35px;">IT刷题通关</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://edu.51cto.com/t/exam/list/id-103.html" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="http://www.h-camel.com/statics/images/logo.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">前端知识每日3+1</h1>
+                                            <p style="position: relative;top: -35px;">前端刷题网站</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="http://www.h-camel.com/index.html" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://www.acmcoder.com/images/logo.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">赛码网</h1>
+                                            <p style="position: relative;top: -35px;">IT笔试面试刷题</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.acmcoder.com/index" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="http://www.fly63.com/_nuxt/img/logo.c69ea00.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">fly63前端网</h1>
+                                            <p style="position: relative;top: -35px;">前端技术学习/文档/工具平台</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="http://www.fly63.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://gw.alipayobjects.com/mdn/prod_resou/afts/img/A*OwZWQ68zSTMAAAAAAAAAAABkARQnAQ" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">语雀</h1>
+                                            <p style="position: relative;top: -35px;">孵化自蚂蚁金服的云端知识库与笔记编写平台。</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.yuque.com/yuque" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="http://yun.itheima.com/Root/images/logo.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">黑马程序员</h1>
+                                            <p style="position: relative;top: -35px;">IT学习路线/视频资料/技术文章/开发工具</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="http://yun.itheima.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://s3.pstatp.com/toutiao/xitu_juejin_web/img/logo.a7995ad.svg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">掘金</h1>
+                                            <p style="position: relative;top: -35px;">技术论坛</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://juejin.im/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://hadoop.apache.org/hadoop-logo.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Apache Hadoop API</h1>
+                                            <p style="position: relative;top: -35px;">Apache文档</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="http://hadoop.apache.org/docs/current2/api/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="http://static.nodejs.cn/_static/img/logo.svg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Node.js中文网</h1>
+                                            <p style="position: relative;top: -35px;">唯一与官网同步的Node.js中文文档</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="http://nodejs.cn/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.32/dist/img/vuejs.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Vue</h1>
+                                            <p style="position: relative;top: -35px;">Vue.js官网</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://cn.vuejs.org/v2/guide/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.32/dist/img/react.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">React</h1>
+                                            <p style="position: relative;top: -35px;">React.js中文文档</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://reactjs.bootcss.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.32/dist/img/express.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Express</h1>
+                                            <p style="position: relative;top: -35px;">Express中文文档</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.expressjs.com.cn/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://img.99danji.com/uploadfile/2016/0812/20160812110114483.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">art-template</h1>
+                                            <p style="position: relative;top: -35px;">art-template模板引擎文档</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://aui.github.io/art-template/zh-cn/docs/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=146135499,2383172211&fm=115&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">koa</h1>
+                                            <p style="position: relative;top: -35px;">Koa是一个新的web框架，由Express幕后的原班人马打造。</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://koa.bootcss.com/#" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://www.tslang.cn/assets/images/logo_nocircle.svg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">TypeScript</h1>
+                                            <p style="position: relative;top: -35px;">TypeScript中文网</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.tslang.cn/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://www.redux.org.cn/assets/images/logo.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Redux中文文档</h1>
+                                            <p style="position: relative;top: -35px;">一个基于Preact/React/React Native的移动端UI组件库</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.redux.org.cn/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/uniapp4@2x.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">uni-app</h1>
+                                            <p style="position: relative;top: -35px;">使用Vue.js开发所有前端(多端)应用的框架</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://uniapp.dcloud.io/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=34857095,651026476&fm=26&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">小程序开发文档</h1>
+                                            <p style="position: relative;top: -35px;">小程序提供了一个简单、高效的应用开发框架</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.3.4/source/box/images/logo/php.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">PHP中文网</h1>
+                                            <p style="position: relative;top: -35px;">php教程/工具</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.php.cn/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="http://c.biancheng.net/templets/new/images/logo.png?v=1.6.43" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">C语言中文网之MySQL教程</h1>
+                                            <p style="position: relative;top: -35px;">C语言中文网之MySQL教程</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="http://c.biancheng.net/mysql/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="http://www.icosky.com/icon/png/Application/isabi/CocoaMySQL.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Node-MySQL官方文档</h1>
+                                            <p style="position: relative;top: -35px;">Node-MySQL 官方文档</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.oschina.net/translate/node-mysql-tutorial?print" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://plugins.jquery.com/jquery-wp-content/themes/jquery/images/logo-jquery.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">jQuery中文文档</h1>
+                                            <p style="position: relative;top: -35px;">jQuery API在线手册</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://jquery.cuishifeng.cn/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </article>
+            </div>
+        </div>
+        
+        
+        <div class="card">
+            <div class="card-content">
+                <div class="tag-title center-align">
+                    <i class="fas fa-toolbox"></i>&nbsp;&nbsp;
+                    UI框架
+                </div>
+                <article id="friends-link">
+                    
+                    <div class="row tags-posts friend-all">
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.32/dist/img/logo.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">BootStrap3</h1>
+                                            <p style="position: relative;top: -35px;">经典的响应式UI框架</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://v3.bootcss.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://img.yzcdn.cn/vant/logo.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Vant</h1>
+                                            <p style="position: relative;top: -35px;">轻量、可靠的移动端Vue组件库</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://vant-contrib.gitee.io/vant/#/zh-CN/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://element.eleme.cn/static/guide.0a8462c.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Element-UI</h1>
+                                            <p style="position: relative;top: -35px;">基于Vue 2.0的桌面端组件库</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://element.eleme.cn/#/zh-CN/component/installation" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Ant Design</h1>
+                                            <p style="position: relative;top: -35px;">基于Ant Design设计体系的React UI组件库</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://ant.design/index-cn" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Ant Design Mobile</h1>
+                                            <p style="position: relative;top: -35px;">一个基于Preact/React/React Native的移动端UI组件库</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://mobile.ant.design/index-cn" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://img-cdn-qiniu.dcloud.net.cn/uploads/nav_menu/4.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">MUI</h1>
+                                            <p style="position: relative;top: -35px;">以iOS平台UI为基础，补充部分Android平台特有的UI控件，接近原生APP体验。</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://dev.dcloud.net.cn/mui/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </article>
+            </div>
+        </div>
+        
+        
+        <div class="card">
+            <div class="card-content">
+                <div class="tag-title center-align">
+                    <i class="fas fa-toolbox"></i>&nbsp;&nbsp;
+                    开发工具
+                </div>
+                <article id="friends-link">
+                    
+                    <div class="row tags-posts friend-all">
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3641717517,737715208&fm=26&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">iconfont</h1>
+                                            <p style="position: relative;top: -35px;">阿里矢量字体图标库</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.iconfont.cn/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://www.bootcss.com/p/font-awesome/assets/img/contribution-sample.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Font Awesome</h1>
+                                            <p style="position: relative;top: -35px;">为Bootstrap设计的图标字体</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.bootcss.com/p/font-awesome/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://i2.wp.com/blog.fontawesome.com/wp-content/uploads/2020/08/Logo.png?resize=1%2C1&ssl=1" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">FontAwesome</h1>
+                                            <p style="position: relative;top: -35px;">字体图标库</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://fontawesome.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3115711949,93694011&fm=26&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">wangEditor</h1>
+                                            <p style="position: relative;top: -35px;">Web富文本编辑器</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="http://www.wangeditor.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://cdn.jsdelivr.net/gh/apache/incubator-echarts-website@asf-site/zh/images/logo.png?_v_=undefined" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">ECharts</h1>
+                                            <p style="position: relative;top: -35px;">数据可视化插件</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://echarts.apache.org/zh/index.html" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://s1.jscdn.com.cn/highcharts/images/logo.svg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Highcharts</h1>
+                                            <p style="position: relative;top: -35px;">数据可视化插件</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.highcharts.com.cn/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3894877089,3854204627&fm=26&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">yzcOpen</h1>
+                                            <p style="position: relative;top: -35px;">各类开发工具</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="http://www.yzcopen.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1490711139,3802228733&fm=26&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">在线工具</h1>
+                                            <p style="position: relative;top: -35px;">各类开发工具</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://tool.lu/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.3.4/source/box/images/logo/runoob.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">菜鸟工具</h1>
+                                            <p style="position: relative;top: -35px;">菜鸟工具</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://c.runoob.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://transfonter.org/images/logo.svg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">transfonter</h1>
+                                            <p style="position: relative;top: -35px;">字体转换器/字体生成器</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://transfonter.org/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://www.css-js.com/20170311/logo.svg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Css.Js</h1>
+                                            <p style="position: relative;top: -35px;">JS压缩/ES6转ES5/转base64/Unicode编码&amp;解码/颜色转换</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.css-js.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2918557607,921430649&fm=15&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Swiper</h1>
+                                            <p style="position: relative;top: -35px;">强大的轮播图插件</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.swiper.com.cn/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3861174213,1512248937&fm=26&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">fullPage.js</h1>
+                                            <p style="position: relative;top: -35px;">基于jQuery的全屏滚动插件</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="http://fullpage.81hu.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="http://www.yanhuangxueyuan.com/favicon.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Three.js</h1>
+                                            <p style="position: relative;top: -35px;">动画制作库</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="http://www.webgl3d.cn/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2623883047,2769736897&fm=26&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Animate.css</h1>
+                                            <p style="position: relative;top: -35px;">动画制作库</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://animate.style/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1345389408,155724452&fm=115&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Moment.js</h1>
+                                            <p style="position: relative;top: -35px;">JavaScript日期处理类库</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="http://momentjs.cn/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4195753445,2092016207&fm=26&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">jQuery插件库</h1>
+                                            <p style="position: relative;top: -35px;">jQuery插件库</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.jq22.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://plugins.jquery.com/jquery-wp-content/themes/jquery/images/logo-jquery.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">jQuery Plugin Registry</h1>
+                                            <p style="position: relative;top: -35px;">jQuery各类插件</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://plugins.jquery.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://lug.ustc.edu.cn/static/lug-penguin.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">LUG @ USTC</h1>
+                                            <p style="position: relative;top: -35px;">镜像网站/LUG书库</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://lug.ustc.edu.cn/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.3.4/source/box/images/logo/python.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Unofficial Windows Binaries</h1>
+                                            <p style="position: relative;top: -35px;">Python拓展库</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://www.runoob.com/manual/static/imgs/logo.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Zepto.js</h1>
+                                            <p style="position: relative;top: -35px;">一个轻量级的针对现代高级浏览器的JavaScript库</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.runoob.com/manual/zeptojs.html#core" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1964130423,2179198915&fm=15&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">npm官网</h1>
+                                            <p style="position: relative;top: -35px;">npm官网</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.npmjs.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://www.showapi.com/images/logo-login.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">万维易源</h1>
+                                            <p style="position: relative;top: -35px;">数据接口</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.showapi.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1474966591,2373386087&fm=26&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">聚合数据</h1>
+                                            <p style="position: relative;top: -35px;">数据接口</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.juhe.cn/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ai.bdstatic.com/file/03D0F32FE36C4E3A893D1AD60E797F5B" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">百度AI开放平台</h1>
+                                            <p style="position: relative;top: -35px;">百度AI开放平台</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://ai.baidu.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3807318910,2251070304&fm=26&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">CodePen</h1>
+                                            <p style="position: relative;top: -35px;">前端实时预览的在线代码编写工具</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://codepen.io/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1535765254,1496783072&fm=26&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">蓝湖</h1>
+                                            <p style="position: relative;top: -35px;">产品设计协作平台</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://lanhuapp.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="http://free.3v.do/images/logo.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">免费空间</h1>
+                                            <p style="position: relative;top: -35px;">免费ASP空间申请</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="http://free.3v.do/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://coolbackgrounds.io/images/backgrounds/index/sea-edge-79ab30e2.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Cool Backgrounds</h1>
+                                            <p style="position: relative;top: -35px;">纯色/简约背景生成器</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://coolbackgrounds.io/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://coolbackgrounds.io/images/backgrounds/index/aqua-d9b59c89.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Neumorphism</h1>
+                                            <p style="position: relative;top: -35px;">盒子样式生成器</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://neumorphism.io/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </article>
+            </div>
+        </div>
+        
+        
+        <div class="card">
+            <div class="card-content">
+                <div class="tag-title center-align">
+                    <i class="fas fa-toolbox"></i>&nbsp;&nbsp;
+                    资源工具
+                </div>
+                <article id="friends-link">
+                    
+                    <div class="row tags-posts friend-all">
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://gitee.com/yafine66/blogimage/raw/master/img/avatar.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">yafine聚宝盒</h1>
+                                            <p style="position: relative;top: -35px;">大佬的聚宝盒</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://yafine-blog.cn/box/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.3.4/source/box/images/logo/tinypng.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">tiny</h1>
+                                            <p style="position: relative;top: -35px;">图片压缩</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://tinify.cn/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="http://cv.ftqq.com/static/media/global-warming.0d3bcb11.svg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">冷熊简历</h1>
+                                            <p style="position: relative;top: -35px;">简历模板</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="http://cv.ftqq.com/?fr=github#" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://www.laomaotao.net/images/Logo.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">老毛桃</h1>
+                                            <p style="position: relative;top: -35px;">U盘重装系统/装启动盘</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.laomaotao.net/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=976736819,524248696&fm=26&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Canva</h1>
+                                            <p style="position: relative;top: -35px;">海报/logo/PPT等各种素材模板</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.css-js.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://cdn.labs.topbook.cc/dist/static/logo.5637f7cd.svg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Topbook</h1>
+                                            <p style="position: relative;top: -35px;">高效生活研究所</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://topbook.cc/overview" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://trace.moe/favicon128.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">trace</h1>
+                                            <p style="position: relative;top: -35px;">识图找动漫</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://trace.moe/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://saucenao.com/images/static/banner.gif" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">sauceNAO</h1>
+                                            <p style="position: relative;top: -35px;">寻找图片源</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://saucenao.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://img.99lb.net/images1/logo.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">谷歌识图</h1>
+                                            <p style="position: relative;top: -35px;">谷歌识图</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://xs.zb-welding.com/image.html" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://www.acgbbs.net/template/ACGI_B1/images/logo-s.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">ACG社区</h1>
+                                            <p style="position: relative;top: -35px;">动漫迷同好聚集之地</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.acgbbs.net/portal.php" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ziyouziti.com/static/images/logo-top@2x.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">自由字体</h1>
+                                            <p style="position: relative;top: -35px;">难得的免费字体网站</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://ziyouziti.com/index-index-all.html" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="http://www.googlefonts.cn/Public/google/zh-cn/gstatic/googlelogo_dark_color_74x24dpx2.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">GoogleFonts</h1>
+                                            <p style="position: relative;top: -35px;">谷歌字体中文版</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="http://www.googlefonts.cn/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://csstools.chinaz.com/tools/images/public/logos/logo-index.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">站长工具</h1>
+                                            <p style="position: relative;top: -35px;">网站域名相关的各种工具</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://tool.chinaz.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="http://ppt.baojia059.cn/web/foreground/images/logo-bangong.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">办公资源</h1>
+                                            <p style="position: relative;top: -35px;">比较便宜的文档模板资源网</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="http://ppt.baojia059.cn/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://piccache.cnki.net/kdn/index/kns8/nimages/logo.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">中国知网</h1>
+                                            <p style="position: relative;top: -35px;">文献检索</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.cnki.net/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="http://lwn.zyge.com.cn/public/cnki/images/17-37-090155-1292709297.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">文献检测系统</h1>
+                                            <p style="position: relative;top: -35px;">多语种/图文/抄袭高校论文查重检测系统</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="http://check.snz01.cn/index/index/index.html" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://www.paperpp.com/resources/img/logo/logo1.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">PaperPP</h1>
+                                            <p style="position: relative;top: -35px;">免费论文查重</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.paperpp.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </article>
+            </div>
+        </div>
+        
+        
+        <div class="card">
+            <div class="card-content">
+                <div class="tag-title center-align">
+                    <i class="fas fa-toolbox"></i>&nbsp;&nbsp;
+                    壁纸图片
+                </div>
+                <article id="friends-link">
+                    
+                    <div class="row tags-posts friend-all">
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3633973040,1580693078&fm=26&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Pixabay</h1>
+                                            <p style="position: relative;top: -35px;">现本博客所有背景图均来源于此网站，致谢！</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://pixabay.com/zh/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="http://pic.netbian.com/static/img/logo.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">彼岸桌面</h1>
+                                            <p style="position: relative;top: -35px;">高清壁纸</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="http://www.netbian.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2046957334,1076531210&fm=15&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">堆糖</h1>
+                                            <p style="position: relative;top: -35px;">许多精美插画/壁纸</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.duitang.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2191207663,2316400255&fm=26&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">500px</h1>
+                                            <p style="position: relative;top: -35px;">Discover and share the world’s best photos.</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://500px.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=876209249,2341511300&fm=26&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">unsplash</h1>
+                                            <p style="position: relative;top: -35px;">Unsplash Photos for everyone.</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://unsplash.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3617968433,3424163027&fm=26&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">WallPaperUp</h1>
+                                            <p style="position: relative;top: -35px;">Your best source of wallpapers!</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.wallpaperup.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=739983169,1217361216&fm=26&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">wallls</h1>
+                                            <p style="position: relative;top: -35px;">All wallpapers from web.</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="http://wallls.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://www.lifeofpix.com/wp-content/themes/lifeofpix_v2/img/lop-logo-vert.svg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">lifeofpix</h1>
+                                            <p style="position: relative;top: -35px;">Free high resolution photography.</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.lifeofpix.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://vlad.studio/images/nav_logo.svg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Vladstudio</h1>
+                                            <p style="position: relative;top: -35px;">简单卡通壁纸</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://vlad.studio/home/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </article>
+            </div>
+        </div>
+        
+        
+        <div class="card">
+            <div class="card-content">
+                <div class="tag-title center-align">
+                    <i class="fas fa-toolbox"></i>&nbsp;&nbsp;
+                    色彩搭配
+                </div>
+                <article id="friends-link">
+                    
+                    <div class="row tags-posts friend-all">
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://www.webdesignrankings.com/resources/lolcolors/assets/logo-6c93e489f1cec93de83f7477b6143b2549dd3c2b8e58c5e2c79e52eb6886a5f2.svg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">LOLCOLORS</h1>
+                                            <p style="position: relative;top: -35px;">四色搭配</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://www.webdesignrankings.com/resources/lolcolors/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=822924588,471482650&fm=26&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">ColorDrop</h1>
+                                            <p style="position: relative;top: -35px;">四色搭配</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://colordrop.io/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://klart.io/static/img/logo.svg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Colors</h1>
+                                            <p style="position: relative;top: -35px;">五色搭配</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://klart.io/colors/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3586181317,3494139616&fm=26&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">uiGraidents</h1>
+                                            <p style="position: relative;top: -35px;">近色搭配</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://uigradients.com/#Piglet" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://color.hailpixel.com/static/ios/media/colordot-icon@2x.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">colordot</h1>
+                                            <p style="position: relative;top: -35px;">滑动取色</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://color.hailpixel.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1985021299,127869328&fm=26&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Colourcode</h1>
+                                            <p style="position: relative;top: -35px;">滑动取色</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://colourco.de/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://vanschneider.com/wp-content/uploads/2017/08/vanschneider_logo2.png" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Color Claim</h1>
+                                            <p style="position: relative;top: -35px;">色卡</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://vanschneider.com/colors" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1112832640,1945809601&fm=26&gp=0.jpg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">NIPPON</h1>
+                                            <p style="position: relative;top: -35px;">日本の伝統色</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="https://nipponcolors.com/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                            <div class="card frind-card">
+                                <div class="frind-ship">
+                                    <div class="title">
+                                        <img src="/image/loading.gif" data-original="http://khroma.co/assets/images/logo_light.svg" alt="img">
+                                        <div>
+                                            <h1 class="friend-name">Khroma</h1>
+                                            <p style="position: relative;top: -35px;">色卡</p>
+                                        </div>
+                                    </div>
+                                    <div class="friend-button">
+                                        <a href="http://khroma.co/train/" target="_blank"
+                                            class="button button-glow button-rounded button-caution">
+                                            前去学习
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </article>
+            </div>
+        </div>
+        
+        
+        <!-- <div class="card">
+            <div class="card-content">
+                <script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+        </div> -->
+        <div class="card">
+
+            
+
+            
+
+            
+
+            
+
+            
+            <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n),
+    thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n),
+    thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+    /* 不折行 */
+    .v[data-class="v"] .vwrap .vheader .vinput {
+        width: 30%;
+        border-bottom: 1px dashed #dedede;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling"
+        style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/small-rose/small-rose.github.io/libs/valine/Valine.min.js"></script>
+
+<script>
+    let metaPlaceholder = {"nick":"昵称/QQ号(必填)","mail":"邮箱(必填)","link":"网址(https://)"};
+
+    new Valine({
+        el: '#vcomments',
+        appId: 'dUHsGiDg4A5si058xMrU4Gv4-MdYXbMMI',
+        appKey: 'XvVrwWtrb8zWG1FpA50yD7kn',
+        notify: 'true' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-CN',
+        placeholder: '你来人间一趟，你要看看太阳，和你的心上人，一起走在街上!',
+        meta: ["nick", "mail", "link"],
+        recordIP: 'true' === 'true',
+        enableQQ: 'monsterid',
+        requiredFields: ["123abc508165c8eba9a77f872xxxx046"],
+        master: ["123abc508165c8eba9a77f872xxxx046"],
+        friends: ["c08508165c8eba9a77f8c2853xxxx09e", "901345d4c91ddfd8db0f175bbcfff0c8", "1512958e18378c98b498d5effe3e76ff"],
+        tagMeta: ["博主", "小伙伴", "访客"],
+        metaPlaceholder: metaPlaceholder,
+        
+    });
+</script>
+
+<!-- new 直达评论 -->
+<script src="<!-- 直达评论 -->
+<div id="to_comment" class="comment-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#vcomments" title="直达评论">
+        <i class="fas fa-comments"></i>
+    </a>
+</div>"></script>
+            
+
+        </div>
+    </div>
+</main>
+
+<script>
+    $(function () {
+        $('#friends-link').masonry({
+            itemSelector: '.friend-div'
+        });
+    });
+</script>
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+
+    /* 更改播放器位置，被看板娘挡住了 */
+    /* .aplayer.aplayer-withlist.aplayer-fixed{
+        bottom: 200px !important;
+    }
+    .aplayer-body{
+        bottom: 200px !important;
+    } */
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="5192126389"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='list'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">百念成诗</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">76.7k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "10";
+                    var startDate = "29";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <span id="icp">
+                <img id="icpImg" src="/image/loading.gif" data-original="/medias/icp.png" />
+                <a href="http://beian.miit.gov.cn" target="_blank">赣ICP备2020012704号-1</a>
+            </span>
+            
+            
+                <span id="gongan">
+                    <img id="gonganImg" src="/image/loading.gif" data-original="/medias/gongan.png"/>
+                   <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=36048202000024">赣公网安备36048202000024号</a>
+                </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/eternitywith" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1356262689" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1356262689" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+    <a href="mailto:1356262689@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="https://blog.csdn.net/qq_43759079" class="tooltipped" target="_blank" data-tooltip="关注我的CSDN: https://blog.csdn.net/qq_43759079" data-position="top" data-delay="50">
+        <i class="fab fa-cuttlefish"></i>
+    </a>
+
+
+
+
+<!-- 
+
+ -->
+
+
+<!-- 
+
+ -->
+
+<!--  -->
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll" style="right: 20px;bottom: 72px;">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "d700a822"
+        });
+        daovoice('update');
+    </script>
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- 看板娘 -->
+    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+    <!-- 在线聊天 -->
+    <!-- <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="010e2dc0-33de-44a9-8453-0405d51dd7ed";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script> -->
+
+    <!-- 樱花飘落特效 -->
+    <!-- <script type="text/javascript">
+        //只在桌面版网页启用特效
+        var windowWidth = $(window).width();
+        if (windowWidth > 768) {
+            document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+        }
+    </script> -->
+
+    <!-- 博客订阅（gitee） start webpushr code -->
+     <!-- <script>(function(w,d, s, id) {if(typeof(w.webpushr)!=='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('setup',{'key':'BDvi-FZGBQZXfILOBhQOMljcpjgLYYPZhdj9BLYGGFSnYpf7oP0q8-X9Ze7VcHovan0yH75LP6C-tBEiPkupaEk' });</script> -->
+    <!-- end webpushr code -->
+
+    <!--博客订阅（xyz） start webpushr code --> <script>(function(w,d, s, id) {if(typeof(w.webpushr)!=='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.async=1;js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('setup',{'key':'BGJU-txfMszhjchoT6_3YzyIvy7Z1wedHiVgHHLdBAhzLocw0R1hFHv3PHuVQRu6ICrqv-U5uoa9uzEpnEvv-tk' });</script><!-- end webpushr code -->
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script>(function(w,d, s, id) {w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.src = 'https://cdn.webpushr.com/app.min.js';fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('init','BGJU-txfMszhjchoT6_3YzyIvy7Z1wedHiVgHHLdBAhzLocw0R1hFHv3PHuVQRu6ICrqv-U5uoa9uzEpnEvv-tk');</script></body>
+
+</html>

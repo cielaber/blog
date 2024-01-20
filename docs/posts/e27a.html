@@ -1,0 +1,2584 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML+CSS面试题, 前端,HTML,CSS,JavaScript,Vue,React,Node,ES6,MySQL">
+    <meta name="description" content="以风为马，百念成诗！">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>HTML+CSS面试题 | 百念成诗</title>
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+    <!-- 强制修改看板娘位置 -->
+    <style>
+        #waifu{
+            left: auto !important;
+            right: 140px !important;
+            z-index: 999 !important;
+        }
+    </style>
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="百念成诗" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
+
+
+
+
+ 
+    <style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },2500); 
+        },1000);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+</script>
+ 
+<body>
+    
+        <div id="loading-container">
+             <p class="loading-text">嘘~  加载慢，正在从阿水的辣鸡服务器里偷取页面 . . . </p> 
+             <div class="loading-image">
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div> 
+                 <div></div>
+             </div>
+        </div>
+    
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <!-- <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/image/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">百念成诗</span>
+                </a>
+            </div> -->
+            <!-- 懒加载插件优化 点击首页 logo 不是跳转到首页，而是查看 logo 图片，解决办法如下 -->
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    <div>
+                        
+                        <img src="/image/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+                        
+                        <span class="logo-span" style="display: none;">百念成诗</span>
+                    </div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light" target="_blank">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light" target="_blank">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light" target="_blank">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light" target="_blank">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light" target="_blank">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light" target="_blank">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light" target="_blank">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="http://treasure.eternitywith.xyz" class="waves-effect waves-light" target="_blank">
+      
+      <i class="fas fa-toolbox" style="zoom: 0.6;"></i>
+      
+      <span>藏宝阁</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="http://mywords.eternitywith.xyz" class="waves-effect waves-light" target="_blank">
+      
+      <i class="fas fa-user-secret" style="zoom: 0.6;"></i>
+      
+      <span>WORDS</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="http://album.eternitywith.xyz" class="waves-effect waves-light" target="_blank">
+      
+      <i class="fas fa-image" style="zoom: 0.6;"></i>
+      
+      <span>拾光</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color" style="text-align:center;">
+        
+        <img src="/image/loading.gif" data-original="/medias/avatar.jpg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name" style="display: none;">百念成诗</div>
+        <div class="logo-desc">
+            
+            以风为马，百念成诗！
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a target="_blank" rel="noopener" href="http://treasure.eternitywith.xyz" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-toolbox"></i>
+			
+			藏宝阁
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a target="_blank" rel="noopener" href="http://mywords.eternitywith.xyz" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-secret"></i>
+			
+			WORDS
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a target="_blank" rel="noopener" href="http://album.eternitywith.xyz" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-image"></i>
+			
+			拾光
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/eternitywith" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #e04721;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/eternitywith" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/image/5.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">HTML+CSS面试题</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+        /* right: 0px; */
+    }
+
+    /* .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    } */
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+        padding-top: 1px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/HTML/">
+                                <span class="chip bg-color">HTML</span>
+                            </a>
+                        
+                            <a href="/tags/CSS/">
+                                <span class="chip bg-color">CSS</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/" class="post-category">
+                                前端面试题
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-08-23
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-11-23
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    6.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    24 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="优就业大前端第一阶段（HTML-CSS）面试题"><a href="#优就业大前端第一阶段（HTML-CSS）面试题" class="headerlink" title="优就业大前端第一阶段（HTML+CSS）面试题"></a>优就业大前端第一阶段（HTML+CSS）面试题</h1><h2 id="第一章-HTML入门"><a href="#第一章-HTML入门" class="headerlink" title="第一章 HTML入门"></a>第一章 HTML入门</h2><h3 id="1、简述-lt-doctype-gt-的作用？"><a href="#1、简述-lt-doctype-gt-的作用？" class="headerlink" title="1、简述<!doctype>的作用？"></a>1、简述&lt;!doctype&gt;的作用？</h3><blockquote>
+<p><code>&lt;!DOCTYPE html&gt;</code> 决定浏览器渲染方式。<code>&lt;!DOCTYPE html&gt;</code>表示用HTML5的doctype声明文件包含HTML5标记。</p>
+<p><code>&lt;!DOCTYPE&gt;</code>:告知浏览器当前的HTML或XML文档是哪一个版本。Doctype是一条声明，而不是一个标签，也可以把它叫做“文档类型声明”或者简称为“DTD”。</p>
+</blockquote>
+<h3 id="2、常见的浏览器及其内核？"><a href="#2、常见的浏览器及其内核？" class="headerlink" title="2、常见的浏览器及其内核？"></a>2、常见的浏览器及其内核？</h3><blockquote>
+<p>谷歌(chrome)浏览器 – webkit –Blink</p>
+</blockquote>
+<blockquote>
+<p>苹果(Safari) –webkit</p>
+</blockquote>
+<blockquote>
+<p>IE浏览器 –trident</p>
+</blockquote>
+<blockquote>
+<p>欧鹏浏览器(Opera) –Presto –webkit –Blink</p>
+</blockquote>
+<blockquote>
+<p>火狐浏览器(Firefox) –Gecko</p>
+</blockquote>
+<h3 id="3、b和strong，i和em标签的区别？"><a href="#3、b和strong，i和em标签的区别？" class="headerlink" title="3、b和strong，i和em标签的区别？"></a>3、b和strong，i和em标签的区别？</h3><blockquote>
+<p>b、i属于修饰类标签属于物理标签，没有做到结构与样式分离。strong、em属于内容类标签属于逻辑标签，做到了结构与样式分离。</p>
+</blockquote>
+<blockquote>
+<p>strong和em都表示强调，strong比em语气更强烈。</p>
+</blockquote>
+<blockquote>
+<p>在搜索引擎优化strong和em比b和i重要的多。</p>
+</blockquote>
+<h3 id="4、谈谈对语义化的理解？"><a href="#4、谈谈对语义化的理解？" class="headerlink" title="4、谈谈对语义化的理解？"></a>4、谈谈对语义化的理解？</h3><blockquote>
+<p>概念：</p>
+<blockquote>
+<p>用合理的HTML标签及其特有的属性去格式化文档内容。如标题用h1-h6、段落用p，合理地设置图片的alt属性。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>好处：</p>
+<blockquote>
+<ul>
+<li>在没有css的情况下，页面也能呈现出很好的内容结构。  </li>
+<li>使代码更具可读性，便于开发和后期维护。  </li>
+<li>有利于用户体验。如title、label标签、alt属性的灵活运用。  </li>
+<li>有利于SEO。网页和搜索引擎建立良好沟通，有助于爬虫抓取更多的有效信息。爬虫依赖于标签来确定上下文和各个字段关键字的权重。</li>
+</ul>
+</blockquote>
+</blockquote>
+<h2 id="第二章-CSS入门"><a href="#第二章-CSS入门" class="headerlink" title="第二章 CSS入门"></a>第二章 CSS入门</h2><h3 id="1、css引入方式有哪些？"><a href="#1、css引入方式有哪些？" class="headerlink" title="1、css引入方式有哪些？"></a>1、css引入方式有哪些？</h3><blockquote>
+<p>行内样式、内部样式表（内嵌式）、外部样式表（外链式）</p>
+</blockquote>
+<h3 id="2、css基本选择器有哪些？"><a href="#2、css基本选择器有哪些？" class="headerlink" title="2、css基本选择器有哪些？"></a>2、css基本选择器有哪些？</h3><blockquote>
+<p>通配符选择器、标签选择器、类选择器、id选择器</p>
+</blockquote>
+<h3 id="3、如何合并表格单元格？"><a href="#3、如何合并表格单元格？" class="headerlink" title="3、如何合并表格单元格？"></a>3、如何合并表格单元格？</h3><blockquote>
+<p>跨行合并rowspan  </p>
+</blockquote>
+<blockquote>
+<p>跨列合并colspan </p>
+</blockquote>
+<blockquote>
+<p>补充：边框合并border-collapse:collapse;</p>
+</blockquote>
+<h3 id="4、caption、thead、tbody、tfoot有什么用？"><a href="#4、caption、thead、tbody、tfoot有什么用？" class="headerlink" title="4、caption、thead、tbody、tfoot有什么用？"></a>4、caption、thead、tbody、tfoot有什么用？</h3><blockquote>
+<p>这些标签能增强语义化，让表格结构更加清晰，对布局不会产生影响。</p>
+</blockquote>
+<h2 id="第三章-盒模型"><a href="#第三章-盒模型" class="headerlink" title="第三章 盒模型"></a>第三章 盒模型</h2><h3 id="1、常见的表单元素有哪些？"><a href="#1、常见的表单元素有哪些？" class="headerlink" title="1、常见的表单元素有哪些？"></a>1、常见的表单元素有哪些？</h3><blockquote>
+<p>input标签(text、password、button、radio、checkbox、submit、reset、file、image)，select标签、textarea标签、button标签</p>
+</blockquote>
+<h3 id="2、请简述一下盒模型的组成？"><a href="#2、请简述一下盒模型的组成？" class="headerlink" title="2、请简述一下盒模型的组成？"></a>2、请简述一下盒模型的组成？</h3><blockquote>
+<p>content、padding、border、margin</p>
+</blockquote>
+<h3 id="3、css复合选择器有哪些？"><a href="#3、css复合选择器有哪些？" class="headerlink" title="3、css复合选择器有哪些？"></a>3、css复合选择器有哪些？</h3><blockquote>
+<p>后代选择器、子代选择器、并集选择器、交集选择器、伪类链接选择器</p>
+</blockquote>
+<h2 id="第四章-浮动"><a href="#第四章-浮动" class="headerlink" title="第四章 浮动"></a>第四章 浮动</h2><h3 id="1、块级标签、行内块标签、行内标签的区别？"><a href="#1、块级标签、行内块标签、行内标签的区别？" class="headerlink" title="1、块级标签、行内块标签、行内标签的区别？"></a>1、块级标签、行内块标签、行内标签的区别？</h3><blockquote>
+<p>块级标签:div、p、h1-h6、ul、ol、li、dl、dt、dd、hr、form  </p>
+<blockquote>
+<ul>
+<li>独占一行，上下排列。 </li>
+<li>默认宽度占满父级，默认高度是本身内容的高度。</li>
+<li>可以设置宽高及所有盒模型属性。</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>行内标签:label、span、a、b、strong、i、em、sub、sup、del</p>
+<blockquote>
+<ul>
+<li>默认并排，宽高由内容撑开。  </li>
+<li>行内元素只能容纳文本或其他内联元素(行内元素)，不能镶嵌块级元素。</li>
+<li>行标签之间有间隙、不能设置上下内外边距，可以设置左右内外边距。</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>行内块标签:input、img、select、textarea、button</p>
+<blockquote>
+<ul>
+<li>默认并排，可以设置宽高。</li>
+<li>中间有间距，可以设置盒模型的所有属性。</li>
+</ul>
+</blockquote>
+</blockquote>
+<h3 id="2、浮动产生的问题？清除浮动的方案？"><a href="#2、浮动产生的问题？清除浮动的方案？" class="headerlink" title="2、浮动产生的问题？清除浮动的方案？"></a>2、浮动产生的问题？清除浮动的方案？</h3><blockquote>
+<p>产生的问题（浮动是为了实现文字环绕图片而产生）</p>
+<blockquote>
+<p>子标签浮动后脱离文档流，导致父标签高度塌陷，会影响后续正常布局。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>清楚浮动的方法</p>
+<blockquote>
+<ul>
+<li><p>给浮动的父标签固定高度（不够灵活）。</p>
+</li>
+<li><p>给父标签加overflow属性，overflow为visible以外的其他值时（即把父标签设置成BFC）可以帮助实现。</p>
+</li>
+<li><p>给浮动标签的最后加一个空块标签，标签本身不浮动，且添加样式clear:both;(代码冗余，不建议)</p>
+</li>
+<li><p>(推荐方法)给浮动标签的父标签添加.clearfix（不会在结构上产生代码冗余，可多次重复使用）。</p>
+</li>
+</ul>
+<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.clearfix</span><span class="token pseudo-element">::after</span></span><span class="token punctuation">{</span>
+   <span class="token property">content</span><span class="token punctuation">:</span><span class="token string">""</span><span class="token punctuation">;</span>
+   <span class="token property">clear</span><span class="token punctuation">:</span>both<span class="token punctuation">;</span>
+   <span class="token property">display</span><span class="token punctuation">:</span>block<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.clearfix</span></span><span class="token punctuation">{</span>
+   *<span class="token property">zoom</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span> //为了兼容ie<span class="token number">7</span>及以下。
+<span class="token punctuation">}</span></code></pre>
+</blockquote>
+</blockquote>
+<h3 id="3、伪元素如何创建？"><a href="#3、伪元素如何创建？" class="headerlink" title="3、伪元素如何创建？"></a>3、伪元素如何创建？</h3><blockquote>
+<p>在元素的开头（第一个子元素之前）添加</p>
+<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.box</span><span class="token pseudo-element">::before</span></span><span class="token punctuation">{</span>
+<span class="token property">content</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">;</span>
+<span class="token number">...</span>
+<span class="token punctuation">}</span></code></pre>
+</blockquote>
+<blockquote>
+<p>在元素的末尾（第一个子元素之后）添加</p>
+<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.box</span><span class="token pseudo-element">::after</span></span><span class="token punctuation">{</span>
+<span class="token property">content</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">;</span>
+<span class="token number">...</span>
+<span class="token punctuation">}</span></code></pre>
+</blockquote>
+<h2 id="第五章-定位"><a href="#第五章-定位" class="headerlink" title="第五章 定位"></a>第五章 定位</h2><h3 id="1、如何实现盒子的水平垂直居中？"><a href="#1、如何实现盒子的水平垂直居中？" class="headerlink" title="1、如何实现盒子的水平垂直居中？"></a>1、如何实现盒子的水平垂直居中？</h3><blockquote>
+<p>文本/行内块水平居中：</p>
+<blockquote>
+<p>父标签text-align:center;</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>文本/行内块垂直居中：</p>
+<blockquote>
+<ul>
+<li>line-height:height;</li>
+<li>父标签padding-top=padding-bottom  </li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>块元素水平居中：</p>
+<pre class=" language-css"><code class="language-css"><span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span> auto<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">/*需要固定宽度*/</span></code></pre>
+</blockquote>
+<blockquote>
+<p>块元素垂直居中：</p>
+<blockquote>
+<ul>
+<li>调节margin、padding</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>绝对定位（父元素尺寸变化，子元素尺寸固定）</li>
+</ul>
+<pre class=" language-css"><code class="language-css"> <span class="token selector"><span class="token class">.parent</span></span><span class="token punctuation">{</span>
+   <span class="token property">position</span><span class="token punctuation">:</span>relative<span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+ <span class="token selector"><span class="token class">.child</span></span><span class="token punctuation">{</span>
+   <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">200</span>px<span class="token punctuation">;</span>
+   <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">200</span>px<span class="token punctuation">;</span>
+   <span class="token property">position</span><span class="token punctuation">:</span>absolute<span class="token punctuation">;</span>
+   <span class="token property">left</span><span class="token punctuation">:</span><span class="token number">50%</span>；
+   top：<span class="token number">50%</span>；
+   <span class="token comment" spellcheck="true">/* 再移动子元素宽度和高度的一半 */</span>
+   <span class="token property">margin-left</span><span class="token punctuation">:</span>-<span class="token number">100</span>px<span class="token punctuation">;</span>
+   <span class="token property">margin-top</span><span class="token punctuation">:</span>-<span class="token number">100</span>px<span class="token punctuation">;</span>
+ <span class="token punctuation">}</span></code></pre>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>绝对定位（父元素和子元素的尺寸都是可变的）</li>
+</ul>
+<pre class=" language-css"><code class="language-css"> <span class="token selector"><span class="token class">.parent</span></span><span class="token punctuation">{</span>
+   <span class="token property">position</span><span class="token punctuation">:</span>relative<span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+ <span class="token selector"><span class="token class">.child</span></span><span class="token punctuation">{</span>
+   <span class="token property">position</span><span class="token punctuation">:</span>absolute<span class="token punctuation">;</span>
+   <span class="token property">top</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+   <span class="token property">bottom</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+   <span class="token property">margin</span><span class="token punctuation">:</span>auto<span class="token punctuation">;</span>
+   <span class="token comment" spellcheck="true">/*如果还想实现水平居,可以加上:*/</span>
+   <span class="token property">right</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+   <span class="token property">left</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span></code></pre>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>采用Flex弹性布局 （该方法适用于行内、行内块、块级标签）<br>父元素设置display:flex;<br>align-items: center;（子元素对齐方式）<br>水平居中还需要加上：justify-content:center;</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>采用表格布局（该方法适用于行内、行内块、块级标签,但不常用）<br>设置父标签display:table;<br>子标签display:table-cell;vertical:middle;<br>如下：</li>
+</ul>
+<pre class=" language-css"><code class="language-css"><span class="token selector">&lt;div class="wrapper">
+   &lt;p>我要垂直居中啊a我要垂直居中啊a我要垂直居中啊a我要垂直居中啊a&lt;/p>
+&lt;/div>
+
+<span class="token class">.wrapper</span></span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span>table<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.wrapper</span> p</span><span class="token punctuation">{</span>
+ <span class="token property">display</span><span class="token punctuation">:</span>table-cell<span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*该属性使该元素成为单元格，宽高无效，margin无效，宽度由内容撑开*/</span>
+ <span class="token property">vertical-align</span><span class="token punctuation">:</span>middle<span class="token punctuation">;</span>
+ <span class="token comment" spellcheck="true">/*如果还想实现水平居中,加上:*/</span>
+ <span class="token property">text-align</span><span class="token punctuation">:</span>center<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+</blockquote>
+</blockquote>
+<h2 id="第六章-布局技巧"><a href="#第六章-布局技巧" class="headerlink" title="第六章 布局技巧"></a>第六章 布局技巧</h2><h3 id="1、图片下方空白间隙如何解决？"><a href="#1、图片下方空白间隙如何解决？" class="headerlink" title="1、图片下方空白间隙如何解决？"></a>1、图片下方空白间隙如何解决？</h3><blockquote>
+<p>水平空白</p>
+<blockquote>
+<ul>
+<li>图片浮动(不建议)  </li>
+<li>父元素设置font-size:0;</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>垂直间隙</p>
+<blockquote>
+<ul>
+<li>图片浮动(不建议)  </li>
+<li>父元素设置font-size:0或line-height:0;  </li>
+<li>图片设置vertical-align:middle; //任意不为baseline的值都可以，因为基线对齐会使基线以下的部分空出来。</li>
+<li>图片设置display:block;</li>
+</ul>
+</blockquote>
+</blockquote>
+<h3 id="2、请简述等高布局、圣杯布局、双飞翼布局的实现原理。"><a href="#2、请简述等高布局、圣杯布局、双飞翼布局的实现原理。" class="headerlink" title="2、请简述等高布局、圣杯布局、双飞翼布局的实现原理。"></a>2、请简述等高布局、圣杯布局、双飞翼布局的实现原理。</h3><blockquote>
+<p>等高布局</p>
+<blockquote>
+<ul>
+<li>伪等高</li>
+</ul>
+<blockquote>
+<ul>
+<li>边框模拟<br>原理：因为元素边框和元素高度始终是相同高度，用元素的边框颜色来伪装左右两个兄弟元素的背景色。然后将左右两个透明背景的元素使用absolute覆盖在中间元素的左右边框上，实现视觉上的等高效果。注意:左右两侧元素的内容高度不能大于中间元素内容高度，否则无法撑开容器高度。</li>
+<li>内外边距相消<br>因为背景是在padding区域显示的，设置一个大数值的padding-bottom，再设置相同数值的负的margin-bottom，使背景色铺满元素区域，又符合元素的盒模型的计算公式（实际宽高=内容+内边距+边框+外边距），实现视觉上的等高效果。注意：父元素要设置overflow:hidden。如果页面中使用a锚点跳转时，将会隐藏部分文字信息。如果页面中的背景图片定位到底部，将会看不到背景图片。</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>真等高</li>
+</ul>
+<blockquote>
+<ul>
+<li>背景嵌套<br>利用内容撑开父元素的特点，给每一列添加一个背景容器，并且相互嵌套，等高元素在最里层的背景容器中且同级。背景容器使用相对定位往外移，相应的等高元素也利用margin移到对应的容器里，只要有一个等高元素的高度发生变化，就会撑开套在最里层的背景容器，其他套在外层的背景容器高度也随之变化。（讲义p59页）</li>
+<li>绝对定位<br>所有子元素设置绝对定位，各元素通过绝对定位移到父元素的左中右位置，子元素由于脱离了文档流不占位，无法撑开父元素高度，需要设置父元素的固定高度，并且所有子元素的top:0;bottom:0;(这两个设置才是使子元素高度与父元素同高的关键。)，就可以使得所有子元素的高度都和父元素的高度相同，实现等高效果。</li>
+<li>表格布局<br>table元素中的table-cell元素默认是等高的，将父元素设置成display:table;等高子元素设置成display:table-cell;即可。</li>
+<li>Flex弹性盒布局<br>flex弹性盒中的项目如果未设置高度或高度为auto，则交叉轴方向默认占满容器的高度，再配合justify-content属性调整项目位置，即可实现等高效果。</li>
+<li>Grid网格布局<br>grid网格布局在不设置行数（默认一行）时，设置grid-auto-flow:column;(先列后行)，每列项目默认占满一列的高度即父容器的高度，即可实现等高布局。</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>圣杯布局、双飞翼布局</p>
+<blockquote>
+<p>共同点:<br>中间栏放最前面，左右标签固定宽度，中间标签宽度百分百，三个标签左浮动，左边元素margin:-100%移到第一行最左边，右边元素利用marigin:-自身宽度  移到第一行最右边。<br>圣杯解决方案：三个标签的父容器左右分别设置等于左右元素宽度的padding，再利用相对定位移动左右元素。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>双飞翼解决方案：给中间栏加一个内层inner，并给inner添加等于左右两栏宽度的外边距（其实内边距也可以）。（不能直接给中间栏设置内外边距，因为中间栏设置了width:100%,直接给中间栏加内外边距会导致界面宽度加大。）</p>
+</blockquote>
+</blockquote>
+<h2 id="第七章-CSS技巧"><a href="#第七章-CSS技巧" class="headerlink" title="第七章 CSS技巧"></a>第七章 CSS技巧</h2><h3 id="1、简述css精灵图原理，及优缺点？"><a href="#1、简述css精灵图原理，及优缺点？" class="headerlink" title="1、简述css精灵图原理，及优缺点？"></a>1、简述css精灵图原理，及优缺点？</h3><blockquote>
+<p>原理:<br>css sprites，通常被解释为”CSS图像拼合”或”CSS贴图定位”，就是把网页中一些背景图片整合到一张图片文件中，再利用background-image、background-repeat、background-position等属性的组合进行背景定位，background-position用数字能精确地定位出来背景图片的位置，一般适用于小图标，不适合大背景。 </p>
+</blockquote>
+<blockquote>
+<p>优点：  </p>
+<blockquote>
+<ul>
+<li>减少网页的http请求，从而大大提高网页的性能；</li>
+<li>减少图片命名上的困扰；</li>
+<li>更换风格方便。</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>缺点：  </p>
+<blockquote>
+<ul>
+<li>必须要限定容器的大小符合背景图元素，需要计算；</li>
+<li>需要测量背景图所在的位置。</li>
+</ul>
+</blockquote>
+</blockquote>
+<h3 id="2、简述BFC规则及解决的问题？"><a href="#2、简述BFC规则及解决的问题？" class="headerlink" title="2、简述BFC规则及解决的问题？"></a>2、简述BFC规则及解决的问题？</h3><blockquote>
+<p>规则：  </p>
+<blockquote>
+<ul>
+<li>内部的标签会在垂直方向上一个接一个地放置。</li>
+<li>垂直方向上的距离由margin决定，属于同一个BFC的两个相邻标签的margin会发生重叠。</li>
+<li>每个标签的左外边距与包含块的左边相接触，即使浮动标签也是如此。</li>
+<li>BFC的区域不会与float的标签域重叠。</li>
+<li>计算BFC的高度时，浮动子标签也参与计算。</li>
+<li>BFC就是页面上的一个隔离的独立容器，容器里的子标签不会影响到外面标签，反之亦然。</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>解决的问题:</p>
+<blockquote>
+<ul>
+<li>外边距塌陷（只有垂直方向会发生塌陷，水平方向不会。）<br>由于BFC是一个独立的容器里面的子标签不会影响外面的标签，外面的标签也不会影响BFC内的标签。所以兄弟盒子之间垂直外边距塌陷可以给其中一个盒子套一个父盒子，把父盒子设为BFC即可。父子垂直外边距塌陷，可以把父元素设置成BFC，父级成为了一个独立区域，子标签的边距就无法塌陷到外面。为了不影响布局一般用overflow:hidden;解决外边距塌陷的问题。</li>
+<li>两栏或三栏布局（这里的情况是将左边盒子或左右两边的盒子写在前面，且必须将自适应的盒子写在后面，与圣杯、双飞翼布局不同。）</li>
+</ul>
+<blockquote>
+<ul>
+<li>将左边固定宽度的盒子左浮动，右边盒子设置overflow:hidden;即可将右边盒子设置成BFC，不会覆盖左边元素，并且右边盒子不设宽度就可以实现自适应两栏布局。</li>
+<li>将左右两边固定宽度的盒子左右浮动，中间盒子不设置宽度且设置overflow:hidden;即可实现三栏自适应布局。 （中间栏写在最后的情况下，还可以中间栏不设宽度，且设置左右外边距等于左右两栏的宽度，由于左右两栏浮动不占位，中间栏可以与之同行，也实现了自适应三栏布局。） </li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="3、文本溢出显示省略号如何实现？"><a href="#3、文本溢出显示省略号如何实现？" class="headerlink" title="3、文本溢出显示省略号如何实现？"></a>3、文本溢出显示省略号如何实现？</h3><blockquote>
+<p>单行文本溢出</p>
+<pre class=" language-css"><code class="language-css"><span class="token selector">p</span><span class="token punctuation">{</span>
+<span class="token property">width</span><span class="token punctuation">:</span><span class="token number">200</span>px<span class="token punctuation">;</span>
+<span class="token property">overflow</span><span class="token punctuation">:</span>hidden<span class="token punctuation">;</span>
+<span class="token property">text-overflow</span><span class="token punctuation">:</span>ellipsis<span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*显示省略号*/</span>
+<span class="token property">white-space</span><span class="token punctuation">:</span>nowrap<span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*文本不换行*/</span>
+<span class="token punctuation">}</span></code></pre>
+</blockquote>
+<blockquote>
+<p>多行文本溢出</p>
+<blockquote>
+<ul>
+<li>利用wenkit的css拓展属性（只有webkit内核才有用）</li>
+</ul>
+<pre class=" language-css"><code class="language-css"><span class="token selector">p</span><span class="token punctuation">{</span>
+   <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">200</span>px<span class="token punctuation">;</span>
+   <span class="token property">overflow</span><span class="token punctuation">:</span>hidden<span class="token punctuation">;</span>
+   <span class="token property">text-overflow</span><span class="token punctuation">:</span>ellipsis<span class="token punctuation">;</span>
+   <span class="token property">display</span><span class="token punctuation">:</span>-webkit-box<span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*将对象设置成弹性伸缩盒子模型显示*/</span>
+   <span class="token property">-webkit-line-clamp</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*用来限制在一个块元素显示的文本的行数，这是一个不规范属性，它没有出现在css规范草案中。*/</span>
+   <span class="token property">-webkit-box-orient</span><span class="token punctuation">:</span>vertical<span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*设置伸缩盒子对象的子元素的排列方式*/</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>利用伪元素模拟溢出显示省略号的效果（兼容性比较好）<br>实现步骤:将height设置为line-height的整数倍，防止超出的文字露出。给伪元素p::after添加渐变背景，避免文字之显示一半。</li>
+</ul>
+<pre class=" language-css"><code class="language-css"><span class="token selector">p</span><span class="token punctuation">{</span>
+<span class="token property">position</span><span class="token punctuation">:</span>relative<span class="token punctuation">;</span>
+<span class="token property">width</span><span class="token punctuation">:</span><span class="token number">200</span>px<span class="token punctuation">;</span>
+<span class="token property">line-height</span><span class="token punctuation">:</span><span class="token number">30</span>px<span class="token punctuation">;</span>
+<span class="token property">height</span><span class="token punctuation">:</span><span class="token number">60</span>px<span class="token punctuation">;</span>
+<span class="token property">overflow</span><span class="token punctuation">:</span>hidden<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">p<span class="token pseudo-element">::after</span></span><span class="token punctuation">{</span>
+<span class="token property">position</span><span class="token punctuation">:</span>absolute<span class="token punctuation">;</span>
+<span class="token property">right</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token property">bottom</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token property">content</span><span class="token punctuation">:</span><span class="token string">'...'</span><span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span>block<span class="token punctuation">;</span>
+<span class="token property">padding-left</span><span class="token punctuation">:</span><span class="token number">48</span>px<span class="token punctuation">;</span>
+<span class="token property">background</span><span class="token punctuation">:</span><span class="token function">-webkit-linear-gradient</span><span class="token punctuation">(</span>left,transparent <span class="token number">0</span>,transparent <span class="token number">60%</span>,<span class="token hexcode">#fff</span> <span class="token number">60%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token property">background</span><span class="token punctuation">:</span><span class="token function">-ms-linear-gradient</span><span class="token punctuation">(</span>left,transparent <span class="token number">0</span>,transparent <span class="token number">60%</span>,<span class="token hexcode">#fff</span> <span class="token number">60%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token property">background</span><span class="token punctuation">:</span><span class="token function">-o-linear-gradient</span><span class="token punctuation">(</span>left,transparent <span class="token number">0</span>,transparent <span class="token number">60%</span>,<span class="token hexcode">#fff</span> <span class="token number">60%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token property">background</span><span class="token punctuation">:</span><span class="token function">linear-gradient</span><span class="token punctuation">(</span>left,transparent <span class="token number">0</span>,transparent <span class="token number">60%</span>,<span class="token hexcode">#fff</span> <span class="token number">60%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</blockquote>
+</blockquote>
+<h2 id="第八章-项目切图及规范"><a href="#第八章-项目切图及规范" class="headerlink" title="第八章 项目切图及规范"></a>第八章 项目切图及规范</h2><h3 id="1、为什么要初始化css样式？哪些样式需要初始化？"><a href="#1、为什么要初始化css样式？哪些样式需要初始化？" class="headerlink" title="1、为什么要初始化css样式？哪些样式需要初始化？"></a>1、为什么要初始化css样式？哪些样式需要初始化？</h3><blockquote>
+<p>因为浏览器兼容问题，不同浏览器对某些标签默认的解析是不同的，如果没有对css初始化，往往会出现不同浏览器之间的页面显示差异，为了避免这种差异需要使用样式重置。<br>ul、li、dv等自带的边距，a链接的自带样式，列表自带的列表样式，em、i自带的斜体样式等。</p>
+</blockquote>
+<h3 id="2、display-none和visibility-hidden的区别？"><a href="#2、display-none和visibility-hidden的区别？" class="headerlink" title="2、display:none和visibility:hidden的区别？"></a>2、display:none和visibility:hidden的区别？</h3><blockquote>
+<p>display:none是将元素的显示设为无，即在网页中看不见也不占位。visibility:hidden则是将元素隐藏不可见，但是元素本身宽高都存在并且占位。</p>
+</blockquote>
+<h3 id="3、你能想出几种方法让元素在页面中消失？"><a href="#3、你能想出几种方法让元素在页面中消失？" class="headerlink" title="3、你能想出几种方法让元素在页面中消失？"></a>3、你能想出几种方法让元素在页面中消失？</h3><blockquote>
+<ul>
+<li>display:none;</li>
+<li>visibility:hidden;</li>
+<li>position:absolute或fixed,用z-index覆盖，数值越小，越在后面，默认为0；</li>
+<li>overflow:hidden;将要隐藏的元素移除父元素的范围。</li>
+<li>opacity:0;将元素设置成透明。</li>
+<li>将font-size,line-height,width,height设置为0;</li>
+<li>transform:translate(-100%,-100%);</li>
+<li>position: absolute;top: -9999px;left: -9999px;将元素移出可视区。</li>
+</ul>
+</blockquote>
+<h3 id="4、标签应该如何合理嵌套？"><a href="#4、标签应该如何合理嵌套？" class="headerlink" title="4、标签应该如何合理嵌套？"></a>4、标签应该如何合理嵌套？</h3><blockquote>
+<ul>
+<li>行内标签里面不能放块级标签（a里面可以放块标签）。</li>
+<li>块级标签里面可以放块级标签、行内标签、行内块标签（特殊：p、h1-h6里面不能再放块级）。</li>
+<li>ul、ol和li事固定嵌套，ul、ol的直接子元素必须是li。dl和dt、dd是固定嵌套，tr和td、th是固定嵌套。</li>
+<li>p标签不允许嵌套p标签，a标签不允许嵌套a标签和其他交互性元素如button。</li>
+<li>尽可能地控制元素嵌套层级，不合理地嵌套会影响页面性能。</li>
+</ul>
+</blockquote>
+<h3 id="5、简述网页中常见图片格式及特点？"><a href="#5、简述网页中常见图片格式及特点？" class="headerlink" title="5、简述网页中常见图片格式及特点？"></a>5、简述网页中常见图片格式及特点？</h3><table>
+<thead>
+<tr>
+<th align="center">格式</th>
+<th align="center">优点</th>
+<th align="center">缺点</th>
+<th align="center">使用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">jpg</td>
+<td align="center">色彩丰富，文件小</td>
+<td align="center">有损压缩，反复保存图片质量会明显下降</td>
+<td align="center">色彩丰富地图片/渐变图像/照片</td>
+</tr>
+<tr>
+<td align="center">gif</td>
+<td align="center">文件小，支持动画，无兼容性问题</td>
+<td align="center">只支持支持256种颜色</td>
+<td align="center">色彩简单地logo/icon/动图</td>
+</tr>
+<tr>
+<td align="center">png</td>
+<td align="center">无损压缩、支持透明、简单图片尺寸小</td>
+<td align="center">不支持动画，色彩丰富的图片尺寸大</td>
+<td align="center">logo/icon/透明图</td>
+</tr>
+</tbody></table>
+<h2 id="第九章-PC端项目-兼容问题"><a href="#第九章-PC端项目-兼容问题" class="headerlink" title="第九章 PC端项目-兼容问题"></a>第九章 PC端项目-兼容问题</h2><h3 id="1、说说你了解的浏览器兼容问题有哪些？"><a href="#1、说说你了解的浏览器兼容问题有哪些？" class="headerlink" title="1、说说你了解的浏览器兼容问题有哪些？"></a>1、说说你了解的浏览器兼容问题有哪些？</h3><blockquote>
+<ul>
+<li>图片间隙问题</li>
+</ul>
+<blockquote>
+<ul>
+<li>水平空白</li>
+</ul>
+<blockquote>
+<ul>
+<li>图片浮动</li>
+<li>图片父元素设置font-size:0;</li>
+</ul>
+</blockquote>
+<ul>
+<li>垂直空白</li>
+</ul>
+<blockquote>
+<ul>
+<li>图片设置vertical-align:middle;</li>
+<li>图片设置display:block;</li>
+<li>图片父元素设置font-size:0;line-height:0;</li>
+<li>图片浮动</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<ul>
+<li>ie中图片边框问题<br>ie中图片放在a标签中显示边框。解决方法：图片设置border:none;</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>ie8中背景复合属性写法问题<br>background:url(“images/bg.jpg”)no-repeat;在标准浏览器中均能正常显示背景图片，但是在ie中显示异常。解决方法：在url和no-repeat之间加上空格。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>其他ie低版本兼容性问题</li>
+</ul>
+<blockquote>
+<ul>
+<li>在ie6及更早版本浏览器中，定义小高度的容器。</li>
+</ul>
+<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token id">#test</span></span><span class="token punctuation">{</span>
+<span class="token property">overflow</span><span class="token punctuation">:</span>hidden<span class="token punctuation">;</span>
+<span class="token property">height</span><span class="token punctuation">:</span><span class="token number">1</span>px<span class="token punctuation">;</span>
+<span class="token property">font-size</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token property">line-height</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>ie6及更早版本浏览器下，浮动时产生双倍边距的bug。<br>解决方案:针对ie6设置该标签的display属性为inline即可。</li>
+</ul>
+<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token id">#test</span></span><span class="token punctuation">{</span>
+<span class="token property">float</span><span class="token punctuation">:</span>left<span class="token punctuation">;</span>
+<span class="token property">_display</span><span class="token punctuation">:</span>inline<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>ie7及更早版本浏览器下，子标签相对定位时，父标签overflow属性的auto|hidden失效的问题。<br>解决方案：给父标签也设置相对定位position:relative;</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>ie7及以下块转行内块不在一行显示的问题，解决方案如下:</li>
+</ul>
+<pre class=" language-css"><code class="language-css"><span class="token selector">div</span><span class="token punctuation">{</span>
+<span class="token property">display</span><span class="token punctuation">:</span>inline-block<span class="token punctuation">;</span>
+*<span class="token property">display</span><span class="token punctuation">:</span>inline<span class="token punctuation">;</span>
+*<span class="token property">zoom</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*设置或检索对象的缩放比例，1或100%时表示不缩放，更大更小表示放大缩小，不支持负数，兼容性不好。*/</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>ie7及以下浏览器中，当li中出现浮动子元素时，li之间产生的空白间隙。<br>解决方案：将垂直对齐方式vertical设置为top/middle/bottom。</li>
+</ul>
+</blockquote>
+</blockquote>
+<h3 id="2、什么是CSSHack？"><a href="#2、什么是CSSHack？" class="headerlink" title="2、什么是CSSHack？"></a>2、什么是CSSHack？</h3><blockquote>
+<p>由于不同厂商的浏览器或同一厂商不同版本的浏览器，对css的解析认识不完全一样，因此会导致生成的页面效果不一样，这时候就需要针对不同的浏览器去写不同的css，让它能同时兼容不同的浏览器，能在不同的浏览器中也能得到我们想要的页面效果。</p>
+</blockquote>
+<h2 id="第十章-PC端项目-测试检查"><a href="#第十章-PC端项目-测试检查" class="headerlink" title="第十章 PC端项目-测试检查"></a>第十章 PC端项目-测试检查</h2><h3 id="1、在项目中你是如何做图片优化的？"><a href="#1、在项目中你是如何做图片优化的？" class="headerlink" title="1、在项目中你是如何做图片优化的？"></a>1、在项目中你是如何做图片优化的？</h3><blockquote>
+<ul>
+<li>使用base64编码代替图片。</li>
+</ul>
+<blockquote>
+<p>Base64编码是一种图片处理格式，通过特定的算法将图片编码成一长串字符串，在页面上显示时，可以用该字符串来代替图片的url属性。</p>
+<p>优点：</p>
+<blockquote>
+<ul>
+<li><p>减少HTTP网络请求。网页上的图片资源如果采用http形式的url的话都会额外发送一次请求，网页发送的http请求次数越多，会造成页面加载速度越慢。采用base64格式的编码，将图片转化为字符串后，图片文件会随着html元素一并加载。这样就可以减少http请求的次数，对于网页优化时一种较好的手段。</p>
+</li>
+<li><p>采用base64编码的图片是随着页面一起加载的，不会造成跨域请求的问题。</p>
+</li>
+<li><p>没有图片，更新要重新上传，不会造成清理图片缓存的问题。</p>
+</li>
+</ul>
+</blockquote>
+<p>缺点：</p>
+<blockquote>
+<ul>
+<li>浏览器支持问题，IE6/IE7均不支持base64编码。</li>
+<li>增加了css文件的尺寸。将图片转化为base64格式编码，生成的字符串往往会大于图片源文件的大小。如果将其写在一个css文件中，这样的一个css文件大小会剧增，造成代码不可读，还会造成请求传输的数据量增加。</li>
+<li>造成数据库数据量巨大。将base64编码的图片存入数据库中会造成数据库数据量增大，这样的效果还不如将图片存至图片服务器而只在数据库中存入url字段。</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<ul>
+<li>使用精灵图，减少页面请求次数。</li>
+<li>在保证图片不失真的情况下合适地压缩图片。 <a target="_blank" rel="noopener" href="https://tinify.cn/">https://tinify.cn/</a> </li>
+<li>图片延迟加载(懒加载)：延迟加载图片或者符合某些条件时加载某些图片。</li>
+<li>图片预加载：在网页全部加载之前，提前加载图片，当用户需要查看时直接从本地缓存中渲染，以提供给用户更好的体验，减少等待的时间。</li>
+<li>使用css、svg、canvas、或iconfont代替图片。</li>
+<li>根据不同的终端需求加载对应尺寸的图片。</li>
+<li>根据图片特性和需求选择合适格式的图片。</li>
+</ul>
+</blockquote>
+<h2 id="第十一章-HTML5基础"><a href="#第十一章-HTML5基础" class="headerlink" title="第十一章 HTML5基础"></a>第十一章 HTML5基础</h2><h3 id="1、HTML5有哪些新特性？"><a href="#1、HTML5有哪些新特性？" class="headerlink" title="1、HTML5有哪些新特性？"></a>1、HTML5有哪些新特性？</h3><blockquote>
+<p>语义化标签、多媒体（音视频）、智能表单、canvas画布、web存储、地理定位…</p>
+</blockquote>
+<h3 id="2、如何处理HTML5新标签的浏览器兼容问题？"><a href="#2、如何处理HTML5新标签的浏览器兼容问题？" class="headerlink" title="2、如何处理HTML5新标签的浏览器兼容问题？"></a>2、如何处理HTML5新标签的浏览器兼容问题？</h3><blockquote>
+<ul>
+<li>通过js创建出新增的标签，再在css中将新增标签转为块级，才能使宽高生效。</li>
+</ul>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script<span class="token operator">></span>
+document<span class="token punctuation">.</span><span class="token function">creatElement</span><span class="token punctuation">(</span><span class="token string">'header'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">...</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+</code></pre>
+<pre class=" language-css"><code class="language-css"><span class="token selector">&lt;style>
+header,footer</span><span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span>block<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+&lt;/style>
+</code></pre>
+</blockquote>
+<blockquote>
+<ul>
+<li>使用封装好的插件html5shiv.js解决兼容性问题。</li>
+</ul>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span><span class="token punctuation">[</span><span class="token keyword">if</span> lt ie <span class="token number">9</span><span class="token punctuation">]</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span> src<span class="token operator">=</span><span class="token string">"./js/html5shiv.min.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token punctuation">[</span>endif<span class="token punctuation">]</span><span class="token operator">--</span><span class="token operator">></span>
+</code></pre>
+</blockquote>
+<h2 id="第十二章-CSS3基础"><a href="#第十二章-CSS3基础" class="headerlink" title="第十二章 CSS3基础"></a>第十二章 CSS3基础</h2><h3 id="1、css3有哪些新特性？"><a href="#1、css3有哪些新特性？" class="headerlink" title="1、css3有哪些新特性？"></a>1、css3有哪些新特性？</h3><blockquote>
+<p>新增选择器、文本样式、边框属性（阴影、圆角）、多背景、变形、渐变、动画、过渡、多列布局、弹性盒布局、用户界面等等。</p>
+</blockquote>
+<h3 id="2、css3新增选择器有哪些？"><a href="#2、css3新增选择器有哪些？" class="headerlink" title="2、css3新增选择器有哪些？"></a>2、css3新增选择器有哪些？</h3><blockquote>
+<p>属性选择器、结构伪类选择器、状态伪类选择器</p>
+</blockquote>
+<h2 id="第十三章-CSS3过渡、变换与动画"><a href="#第十三章-CSS3过渡、变换与动画" class="headerlink" title="第十三章 CSS3过渡、变换与动画"></a>第十三章 CSS3过渡、变换与动画</h2><h3 id="1、css3中过渡和动画的区别和各自的适用场景？"><a href="#1、css3中过渡和动画的区别和各自的适用场景？" class="headerlink" title="1、css3中过渡和动画的区别和各自的适用场景？"></a>1、css3中过渡和动画的区别和各自的适用场景？</h3><blockquote>
+<ul>
+<li>过渡</li>
+</ul>
+<blockquote>
+<ul>
+<li>不能自动运行，需要伪类或者js触发。</li>
+<li>只有两种状态。</li>
+<li>触发一次运行一次。</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<ul>
+<li>动画</li>
+</ul>
+<blockquote>
+<ul>
+<li>可以自动运行。</li>
+<li>可以定义多种状态。</li>
+<li>可以多次或无限次运行。</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<ul>
+<li>适用场景</li>
+</ul>
+<blockquote>
+<ul>
+<li>如果要灵活定制多个帧以及循环，用animation。</li>
+<li>如果要简单的from to效果，用transition。</li>
+<li>animation与js的交互不是很紧密，如果要使用js灵活设定动画属性，用transition。</li>
+</ul>
+</blockquote>
+</blockquote>
+<h2 id="第十四章-弹性盒子和预处理"><a href="#第十四章-弹性盒子和预处理" class="headerlink" title="第十四章 弹性盒子和预处理"></a>第十四章 弹性盒子和预处理</h2><h3 id="1、解释一下CSS3的flexbox-弹性盒布局模型-以及适用场景？"><a href="#1、解释一下CSS3的flexbox-弹性盒布局模型-以及适用场景？" class="headerlink" title="1、解释一下CSS3的flexbox(弹性盒布局模型),以及适用场景？"></a>1、解释一下CSS3的flexbox(弹性盒布局模型),以及适用场景？</h3><blockquote>
+<p>弹性盒模型布局是css3中的新的布局方式，把父元素设置成弹性盒容器，可以更加方便地去规定子元素地排列方式、对齐方式、剩余空间。对居中对齐，规则布局（如两栏、三栏布局）非常高效。</p>
+</blockquote>
+<h3 id="2、什么是less？less有什么好处？"><a href="#2、什么是less？less有什么好处？" class="headerlink" title="2、什么是less？less有什么好处？"></a>2、什么是less？less有什么好处？</h3><blockquote>
+<p>定义：less是css的一种预处理语言，提供了一套新的语法，类似于编程语言，简化css代码，并且提供了一个编译器，用来把写好的less文件编译成css文件，在编译之后才能被浏览器识别使用。</p>
+</blockquote>
+<blockquote>
+<p>优点：使css代码更简洁，适应性强，可读性好，有利于代码的维护。</p>
+</blockquote>
+<h2 id="第十五章-移动端项目-布局方案"><a href="#第十五章-移动端项目-布局方案" class="headerlink" title="第十五章 移动端项目-布局方案"></a>第十五章 移动端项目-布局方案</h2><h3 id="1、常见的移动端布局解决方案有哪些？原理如何？"><a href="#1、常见的移动端布局解决方案有哪些？原理如何？" class="headerlink" title="1、常见的移动端布局解决方案有哪些？原理如何？"></a>1、常见的移动端布局解决方案有哪些？原理如何？</h3><blockquote>
+<p>rem布局</p>
+<blockquote>
+<p>rem是指相对于根元素的字体大小的单位。  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>原理：利用rem作为布局单位，不同设备访问页面时，通过js脚本动态计算出一个最新的font-size值设置给html标签，从而达到界面整体缩放效果。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>vw+rem布局</p>
+<blockquote>
+<p>vw是一个相对视口宽度的一个单位，视口被分为100vw。 </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>假设750px的设备中，font-size=100px，则设置html{font-size：13.33333vm;}，然后可以直接以rem为单位布局，不需借助插件。</p>
+</blockquote>
+</blockquote>
+<h2 id="第十六章-移动端项目-拓展知识"><a href="#第十六章-移动端项目-拓展知识" class="headerlink" title="第十六章 移动端项目-拓展知识"></a>第十六章 移动端项目-拓展知识</h2><h3 id="1、如何处理小于12px的字体？"><a href="#1、如何处理小于12px的字体？" class="headerlink" title="1、如何处理小于12px的字体？"></a>1、如何处理小于12px的字体？</h3><blockquote>
+<p>将容器元素转成块级或者行内块，利用-webkit-transform:scale()属性将容器缩小，再用-webkit-transform-orign-X:left center;将变形原点靠右居中，可以使字体左对齐并居中。</p>
+</blockquote>
+<h2 id="第十八章-响应式布局"><a href="#第十八章-响应式布局" class="headerlink" title="第十八章 响应式布局"></a>第十八章 响应式布局</h2><h3 id="1、什么是响应式？"><a href="#1、什么是响应式？" class="headerlink" title="1、什么是响应式？"></a>1、什么是响应式？</h3><blockquote>
+<p>响应式布局是在不同的设备上网页可以呈现不同的布局。一套代码可以兼容pc端、移动端。(不适应复杂网站，适合一些简单的展示网站，如企业官网、后台管理系统。)</p>
+</blockquote>
+<h3 id="2、响应式项目中常用到哪些核心技术？"><a href="#2、响应式项目中常用到哪些核心技术？" class="headerlink" title="2、响应式项目中常用到哪些核心技术？"></a>2、响应式项目中常用到哪些核心技术？</h3><blockquote>
+<p>媒体查询</p>
+<pre class=" language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> screen and <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span>750px<span class="token punctuation">)</span></span><span class="token punctuation">{</span>
+···
+<span class="token punctuation">}</span>
+</code></pre>
+</blockquote>
+<blockquote>
+<p>百分比布局</p>
+<blockquote>
+<p>宽度不固定，可以使用百分比，内外边距也可以使用百分比。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>弹性盒布局</p>
+<pre class=" language-css"><code class="language-css"><span class="token selector">container</span><span class="token punctuation">{</span>
+<span class="token property">display</span><span class="token punctuation">:</span>flex<span class="token punctuation">;</span>
+<span class="token property">flex-direction</span><span class="token punctuation">:</span>row/row-reverse/column/colunm-reverse<span class="token punctuation">;</span>
+<span class="token property">justify-content</span><span class="token punctuation">:</span>flex-start/flex-end/center/space-between/space-around/space-enenly<span class="token punctuation">;</span>
+<span class="token property">align-items</span><span class="token punctuation">:</span>stretch/flex-start/flex-end/center/baseline<span class="token punctuation">;</span>
+<span class="token property">flex-wrap</span><span class="token punctuation">:</span>nowrap/wrap/wrap-reverse<span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*wrap-reverse表示主轴方向向下的情况下，换行且第一行在下方*/</span>
+<span class="token property">align-content</span><span class="token punctuation">:</span>stretch/flex-start/flex-end/center/space-around/space-between/space-evenly<span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*表示多行项目在交叉轴上的对齐，可参考justify-content*/</span>
+<span class="token punctuation">}</span>
+<span class="token selector">items</span><span class="token punctuation">{</span>
+<span class="token property">order</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*定义项目的排列顺序，数值越小，排列越靠前，默认为0*/</span>
+<span class="token property">flex-grow</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*定义项目的放大比例，默认为0，即如果存在剩余空间也不放大。*/</span>
+<span class="token property">flex-shrink</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*定义项目缩小比例，默认为1，即如果空间不足，该项目将缩小。*/</span>
+<span class="token property">align-self</span><span class="token punctuation">:</span>auto/stretch/center/flex-start/flex-end/baseline/inherit<span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*定义该子项目单独在交叉轴上的对齐方式，与align-items属性作用相同，但该属性用于项目。*/</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</blockquote>
+<blockquote>
+<p>响应式图片</p>
+<pre class=" language-css"><code class="language-css"><span class="token selector">img</span><span class="token punctuation">{</span>
+<span class="token property">width</span><span class="token punctuation">:</span><span class="token number">100%</span><span class="token punctuation">;</span>
+<span class="token property">height</span><span class="token punctuation">:</span>auto<span class="token punctuation">;</span><span class="token comment" spellcheck="true">/*保证图片保持原始的宽高比。*/</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">/*为了防止图片宽度过大而使图片失真，需要用max-width属性设置图片最大宽度不超过图片原始宽度。*/</span>
+<span class="token selector">img</span><span class="token punctuation">{</span>
+<span class="token property">max-width</span><span class="token punctuation">:</span><span class="token number">100%</span><span class="token punctuation">;</span>
+<span class="token property">height</span><span class="token punctuation">:</span>auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</blockquote>
+<blockquote>
+<p>响应式字体</p>
+<blockquote>
+<p>通过rem/vw布局搭配媒体查询实现响应式字体。</p>
+</blockquote>
+</blockquote>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">百念成诗</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://www.eternitywith.xyz/posts/e27a.html">https://www.eternitywith.xyz/posts/e27a.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">百念成诗</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/HTML/">
+                                    <span class="chip bg-color">HTML</span>
+                                </a>
+                            
+                                <a href="/tags/CSS/">
+                                    <span class="chip bg-color">CSS</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">来一杯阔乐不加冰！</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/image/loading.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/image/loading.gif" data-original="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n),
+    thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n),
+    thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+    /* 不折行 */
+    .v[data-class="v"] .vwrap .vheader .vinput {
+        width: 30%;
+        border-bottom: 1px dashed #dedede;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling"
+        style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/small-rose/small-rose.github.io/libs/valine/Valine.min.js"></script>
+
+<script>
+    let metaPlaceholder = {"nick":"昵称/QQ号(必填)","mail":"邮箱(必填)","link":"网址(https://)"};
+
+    new Valine({
+        el: '#vcomments',
+        appId: 'dUHsGiDg4A5si058xMrU4Gv4-MdYXbMMI',
+        appKey: 'XvVrwWtrb8zWG1FpA50yD7kn',
+        notify: 'true' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-CN',
+        placeholder: '你来人间一趟，你要看看太阳，和你的心上人，一起走在街上!',
+        meta: ["nick", "mail", "link"],
+        recordIP: 'true' === 'true',
+        enableQQ: 'monsterid',
+        requiredFields: ["123abc508165c8eba9a77f872xxxx046"],
+        master: ["123abc508165c8eba9a77f872xxxx046"],
+        friends: ["c08508165c8eba9a77f8c2853xxxx09e", "901345d4c91ddfd8db0f175bbcfff0c8", "1512958e18378c98b498d5effe3e76ff"],
+        tagMeta: ["博主", "小伙伴", "访客"],
+        metaPlaceholder: metaPlaceholder,
+        
+    });
+</script>
+
+<!-- new 直达评论 -->
+<script src="<!-- 直达评论 -->
+<div id="to_comment" class="comment-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#vcomments" title="直达评论">
+        <i class="fas fa-comments"></i>
+    </a>
+</div>"></script>
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/357e.html">
+                    <div class="card-image">
+                        
+                        <img src="/image/loading.gif" data-original="/image/6.jpg" class="responsive-img" alt="JavaScript-数组对象">
+                        
+                        <span class="card-title">JavaScript-数组对象</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            第八章：JavaScript数组对象
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-23
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/f835.html">
+                    <div class="card-image">
+                        
+                        <img src="/image/loading.gif" data-original="/image/3.jpg" class="responsive-img" alt="JavaScript-this详解及函数初识">
+                        
+                        <span class="card-title">JavaScript-this详解及函数初识</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            第四章：js中this详解及函数初识
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down" style="right: 20px;bottom: 124px;">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+
+    /* 更改播放器位置，被看板娘挡住了 */
+    /* .aplayer.aplayer-withlist.aplayer-fixed{
+        bottom: 200px !important;
+    }
+    .aplayer-body{
+        bottom: 200px !important;
+    } */
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="5192126389"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='list'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">百念成诗</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">76.7k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "10";
+                    var startDate = "29";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <span id="icp">
+                <img id="icpImg" src="/image/loading.gif" data-original="/medias/icp.png" />
+                <a href="http://beian.miit.gov.cn" target="_blank">赣ICP备2020012704号-1</a>
+            </span>
+            
+            
+                <span id="gongan">
+                    <img id="gonganImg" src="/image/loading.gif" data-original="/medias/gongan.png"/>
+                   <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=36048202000024">赣公网安备36048202000024号</a>
+                </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/eternitywith" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1356262689" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1356262689" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+    <a href="mailto:1356262689@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="https://blog.csdn.net/qq_43759079" class="tooltipped" target="_blank" data-tooltip="关注我的CSDN: https://blog.csdn.net/qq_43759079" data-position="top" data-delay="50">
+        <i class="fab fa-cuttlefish"></i>
+    </a>
+
+
+
+
+<!-- 
+
+ -->
+
+
+<!-- 
+
+ -->
+
+<!--  -->
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll" style="right: 20px;bottom: 72px;">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "d700a822"
+        });
+        daovoice('update');
+    </script>
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- 看板娘 -->
+    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+    <!-- 在线聊天 -->
+    <!-- <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="010e2dc0-33de-44a9-8453-0405d51dd7ed";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script> -->
+
+    <!-- 樱花飘落特效 -->
+    <!-- <script type="text/javascript">
+        //只在桌面版网页启用特效
+        var windowWidth = $(window).width();
+        if (windowWidth > 768) {
+            document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+        }
+    </script> -->
+
+    <!-- 博客订阅（gitee） start webpushr code -->
+     <!-- <script>(function(w,d, s, id) {if(typeof(w.webpushr)!=='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('setup',{'key':'BDvi-FZGBQZXfILOBhQOMljcpjgLYYPZhdj9BLYGGFSnYpf7oP0q8-X9Ze7VcHovan0yH75LP6C-tBEiPkupaEk' });</script> -->
+    <!-- end webpushr code -->
+
+    <!--博客订阅（xyz） start webpushr code --> <script>(function(w,d, s, id) {if(typeof(w.webpushr)!=='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.async=1;js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('setup',{'key':'BGJU-txfMszhjchoT6_3YzyIvy7Z1wedHiVgHHLdBAhzLocw0R1hFHv3PHuVQRu6ICrqv-U5uoa9uzEpnEvv-tk' });</script><!-- end webpushr code -->
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script>(function(w,d, s, id) {w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.src = 'https://cdn.webpushr.com/app.min.js';fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('init','BGJU-txfMszhjchoT6_3YzyIvy7Z1wedHiVgHHLdBAhzLocw0R1hFHv3PHuVQRu6ICrqv-U5uoa9uzEpnEvv-tk');</script></body>
+
+</html>

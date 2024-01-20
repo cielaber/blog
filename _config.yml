@@ -1,0 +1,230 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: ' '
+subtitle: '百念成诗'
+description: '以风为马，百念成诗！'
+keywords: ['前端',HTML,CSS,JavaScript,Vue,React,Node,ES6,MySQL]
+author: 百念成诗
+language: zh-CN
+timezone: ''
+email: 1356262689@qq.com
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://www.eternitywith.xyz
+root: /
+# permalink: :year/:month/:day/:title/
+permalink: posts/:abbrlink.html  # 此处可以自己设置，也可以直接使用 :/abbrlink
+#permalink_defaults:
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+
+# 自动生成sitemap
+sitemap:
+  path: sitemap.xml
+baidusitemap: 
+  path: baidusitemap.xml
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: true
+relative_link: false
+future: true
+highlight:
+  enable: false
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 12
+  order_by: -date
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## updated_option supports 'mtime', 'date', 'empty'
+updated_option: 'mtime'
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+#include: 
+#exclude: 
+#ignore: 
+
+aplayer: 
+  asset_inject: false
+   
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: hexo-theme-matery
+
+# Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  - type: git
+    repo: root@150.158.213.219:/home/git/blog.git
+    branch: master
+  - type: baidu_url_submitter
+
+live2d:
+  enable: false
+  scriptFrom: local
+  model: 
+    use: live2d-widget-model-haruto #模型选择
+  display: 
+    position: right  #模型位置
+    width: 150       #模型宽度
+    height: 300      #模型高度
+  mobile: 
+    show: false      #是否在手机端显示
+
+#matery new hexo-prism-plugin 代码高亮
+prism_plugin:
+  mode: 'realtime'    # realtime/preprocess
+  theme: 'tomorrow'
+  line_number: false    # default false
+  custom_css:
+
+#matery new hexo-generator-search 搜索
+search:
+  path: search.xml
+  field: post
+
+#matery new hexo-permalink-pinyin 中文链接转拼音
+permalink_pinyin:
+  enable: true
+  separator: '-' # default: '-'
+
+#matery new hexo-filter-github-emojis 添加emoji表情支持
+githubEmojis:
+  enable: true
+  className: github-emoji
+  inject: true
+  styles:
+  customEmojis:
+
+#matery new hexo-generator-feed 添加rss订阅支持
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+
+#matery new hexo-lazyload-image 图片懒加载
+lazyload:
+  enable: true  # 是否开启图片懒加载
+  onlypost: false  # 是否只对文章的图片做懒加载
+  loadingImg: /image/loading.gif
+
+#matery new hexo-neat压缩
+#hexo-neat 优化提速插件（去掉HTML、css、js的blank字符）
+# neat_enable: true
+# neat_html:
+#   enable: true
+#   exclude:
+#     - '**/*.md'
+# neat_css:
+#   enable: true
+#   exclude:
+#     - '**/*.min.css'
+# neat_js:
+#   enable: true
+#   mangle: true
+#   output:
+#   compress:
+#   exclude:
+#     - '**/*.min.js'
+#     - '**/**/instantpage.js'
+#     - '**/matery.js'
+
+# hexo-baidu-url-submit  百度主动推送
+baidu_url_submit:
+  count: 80 # 提交最新的一个链接
+  host: eternitywith.gitee.io # 在百度站长平台中注册的域名
+  token: InFJ7BPigiEaQXUY # 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
+  path: baidu_urls.txt # 文本文档的地址， 新链接会保存在此文本文档里
+
+abbrlink:
+  alg: crc16   #算法： crc16(default) and crc32
+  rep: hex     #进制： dec(default) and hex: dec #输出进制：十进制和十六进制，默认为10进制。丨dec为十进制，hex为十六进制
+  drafts: false   #(true)Process draft,(false)Do not process draft. false(default) 
+  # Generate categories from directory-tree
+  # depth: the max_depth of directory-tree you want to generate, should > 0
+  auto_category:
+    enable: true  #true(default)
+    depth:        #3(default)
+  auto_title: false #enable auto title, it can auto fill the title by path
+  auto_date: false #enable auto date, it can auto fill the date by time today
+  force: false #enable force mode,in this mode, the plugin will ignore the cache, and calc the abbrlink for every post even it already had abbrlink.
+
+# 博客订阅
+webPushNotification:
+  webpushrKey: "e26a4ffcd3f88722fa8419bd03419787"
+  webpushrAuthToken: "16594"
+  trackingCode: "BGJU-txfMszhjchoT6_3YzyIvy7Z1wedHiVgHHLdBAhzLocw0R1hFHv3PHuVQRu6ICrqv-U5uoa9uzEpnEvv-tk"
+# 上面是xyz的，下面为gitee的
+# webPushNotification:
+#   webpushrKey: "NENaDFbEC-GC1tGh5bkogjumMPa_nyRSzGadSXP0YV8"
+#   webpushrAuthToken: "12066"
+#   trackingCode: "BDvi-FZGBQZXfILOBhQOMljcpjgLYYPZhdj9BLYGGFSnYpf7oP0q8-X9Ze7VcHovan0yH75LP6C-tBEiPkupaEk"
+
+
